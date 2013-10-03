@@ -1,7 +1,7 @@
  <?php 
  // Connects to  Database 
- mysql_connect("your.hostaddress.com", "username", "password") or die(mysql_error()); 
- mysql_select_db("Database_Name") or die(mysql_error()); 
+ mysql_connect("localhost", "drmazak_test", "tests") or die(mysql_error()); 
+ mysql_select_db("drmazak_secure_login") or die(mysql_error()); 
  //checks cookies to make sure they are logged in 
  if(isset($_COOKIE['ID_my_site'])) { 
  	$username = $_COOKIE['ID_my_site']; 

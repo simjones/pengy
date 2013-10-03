@@ -1,5 +1,6 @@
  <?php 
-mysql_connect("your.hostaddress.com", "username", "password") or die(mysql_error()); mysql_select_db("Database_Name") or die(mysql_error()); 
+ mysql_connect("localhost", "drmazak_test", "tests") or die(mysql_error()); 
+ mysql_select_db("drmazak_secure_login") or die(mysql_error()); 
 //Checks if there is a login cookie 
 if(isset($_COOKIE['ID_my_site'])){
 //if there is, it logs you in and directes you to the members page 
@@ -48,7 +49,7 @@ $check = mysql_query("SELECT * FROM users WHERE username = '$username'")
 	$hour = time() + 3600; setcookie(ID_my_site, 
 	$_POST['username'], $hour); setcookie(Key_my_site, 
 	$_POST['pass'], $hour);	 
-	/then redirect them to the members area 
+	//then redirect them to the members area 
 	header("Location: members.php"); 
 	} 
 } 

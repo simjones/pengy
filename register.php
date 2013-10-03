@@ -1,6 +1,6 @@
 <?php // Connects to your Database 
- mysql_connect("localhost", "un", "pw") or die(mysql_error()); 
- mysql_select_db("secure_login") or die(mysql_error()); 
+ mysql_connect("localhost", "drmazak_test", "tests") or die(mysql_error()); 
+ mysql_select_db("drmazak_secure_login") or die(mysql_error()); 
  //This code runs if the form has been submitted
  if (isset($_POST['submit'])) { 
  
