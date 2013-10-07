@@ -1,6 +1,6 @@
- <?php 
- mysql_connect("localhost", "drmazak_test", "tests") or die(mysql_error()); 
- mysql_select_db("drmazak_secure_login") or die(mysql_error()); 
+<?php 
+include 'database_func.php';
+
 //Checks if there is a login cookie 
 if(isset($_COOKIE['ID_my_site'])){
 //if there is, it logs you in and directes you to the members page 

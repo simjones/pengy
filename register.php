@@ -1,6 +1,7 @@
-<?php // Connects to your Database 
- mysql_connect("localhost", "drmazak_test", "tests") or die(mysql_error()); 
- mysql_select_db("drmazak_secure_login") or die(mysql_error()); 
+<?php 
+
+include 'database_func.php';
+
  //This code runs if the form has been submitted
  if (isset($_POST['submit'])) { 
  
