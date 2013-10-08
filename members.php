@@ -34,19 +34,24 @@ header("Location: login.php");
   <meta charset="utf-8" />
   <title>TimeTracker Administrative Console</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" media="all" type="text/css" href="main.css" />
+
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script src="jquery-ui-timepicker-addon.js"></script>
   <script>
+ 
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datetimepicker();
   });
   </script>
 </head>
 <body>
  
-<p>Date: <input type="text" id="datepicker" /></p>
- 
- 
+<p>Start Date: <input type="text" id="datepicker" /></p>
+<br/><br/>
+<p>End Date: <input type="text" id="datepicker" /></p>
+
+
 </body>
 </html>
