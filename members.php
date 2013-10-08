@@ -68,6 +68,9 @@ header("Location: login.php");
  <tr><td>Assign to:</td><td>
  <input type="text" id="assignTo" />
  </td></tr>
+ <tr><td>Comments:</td>
+ <td><textarea cols="30" rows="5" name="myname">
+</textarea></tr><td>
   <tr><td>
  <input type="button" id="submit" value="Submit Task" />
  </td>
