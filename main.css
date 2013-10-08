@@ -14,7 +14,22 @@ nav ul li {
 	right: 10x;
 	text-align: left;
 	}
+	
+#header img {
+float: center;
+width: 55%;
+height: 20%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
 
+table {
+text-align: center;
+vertical-align: middle;
+margin-left: auto;
+margin-right: auto;
+}
 	
 a {
 	text-decoration: none;
@@ -87,9 +102,7 @@ h6 {
 	margin-top: 0;
 	margin-bottom: 0;
 	}
-img {
-	border: 0;
-	}
+
 .nowrap {
 	white-space: nowrap;
 	font-size: 10px;
@@ -175,6 +188,7 @@ pre {
 	text-transform: capitalize;
 	word-spacing: 10px;
 }
+
 
 /* css for timepicker */
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }

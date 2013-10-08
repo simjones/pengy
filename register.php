@@ -35,11 +35,22 @@ if (!get_magic_quotes_gpc()) {
 $insert = "INSERT INTO users (username, password) VALUES ('".$_POST['username']."', '".$_POST['pass']."')";
 $add_member = mysql_query($insert);
 ?>
+<html>
+<head>
+<link rel="stylesheet" media="all" type="text/css" href="main.css" />
+</head>
+<body>
  <h1>Registered</h1>
  <p>Thank you, you have registered - you may now login</a>.</p>
  <?php } 
  else {	 ?>
  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+ <link rel="stylesheet" media="all" type="text/css" href="main.css" />
+ <div id="middle">
+ <div id="header">
+ <img src="ttlogo.jpg"/>
+ </div>
+ </div>
  <table border="0">
  <tr><td>Username:</td><td>
  <input type="text" name="username" maxlength="60">
@@ -55,3 +66,6 @@ value="Register"></th></tr> </table>
  </form>
  <?php
  } ?> 
+
+ </body>
+ </html>

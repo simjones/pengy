@@ -42,16 +42,43 @@ header("Location: login.php");
   <script>
  
   $(function() {
-    $( "#datepicker" ).datetimepicker();
+    $( "#dateStart" ).datetimepicker();
+  });
+    $(function() {
+    $( "#dateEnd1" ).datetimepicker();
   });
   </script>
 </head>
 <body>
+ <div id="middle">
+ <div id="header">
+ <img src="ttlogo.jpg"/>
+ </div>
+<table border="0">
+ <form action="insert_task.php" method="post">
+ <tr><td>Project Name:</td><td>
+ <input type="text" id="projectName" />
+ </td></tr>
+ <tr><td>Start Date/Time:</td><td>
+<input type="text" id="dateStart" />
+ </td></tr>
+ <tr><td>End Date/Time:</td><td>
+ <input type="text" id="dateEnd" />
+ </td></tr>
+ <tr><td>Assign to:</td><td>
+ <input type="text" id="assignTo" />
+ </td></tr>
+  <tr><td>
+ <input type="button" id="submit" value="Submit Task" />
+ </td>
+ <td>
+ <input type="button" id="reset" value="Reset" />
+ </tr>
+ </table>
  
-<p>Start Date: <input type="text" id="datepicker" /></p>
-<br/><br/>
-<p>End Date: <input type="text" id="datepicker" /></p>
+ </form>
 
+ </div>
 
 </body>
 </html>
