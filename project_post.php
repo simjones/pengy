@@ -10,6 +10,7 @@ public $dateStarted;
 public $dateEnded;
 public $assignTo;
 public $comments;
+public $status;
 
 function __construct($inId=null, $inProjectName=null, $inOrganizer $inDateStart=null, $inDateEnd=null, $inAssignTo=null, $inComments=null, $inStatus=null)
 {
@@ -47,6 +48,10 @@ function __construct($inId=null, $inProjectName=null, $inOrganizer $inDateStart=
 	if (!empty($inComments))
 	{
 		this->comments = $inComments
+	}
+	if (!empty($inStatus))
+	{
+		this->status = $inStatus
 	}
 
 }
