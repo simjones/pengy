@@ -39,40 +39,55 @@ header("Location: login.php");
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="jquery-ui-timepicker-addon.js"></script>
-  <script>
- 
+  <script>/*
+ $(document).ready(function(){
+   var $form = $('form');
+   $form.submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(response){
+            
+      },'json');
+      return false;
+   });
+});*/
   $(function() {
-    $( "#dateStart" ).datetimepicker();
+    $( "#dateStart" ).datetimepicker({
+    dateFormat: "yy-mm-dd",
+    timeFormat: "hh:mm:ss"
+    });
   });
     $(function() {
-    $( "#dateEnd1" ).datetimepicker();
+    $( "#dateEnd" ).datetimepicker({
+    dateFormat: "yy-mm-dd",
+    timeFormat: "hh:mm:ss"
+    });
   });
+
   </script>
 </head>
 <body>
- <div id="middle">
  <div id="header">
- <img src="ttlogo.jpg"/>
  </div>
+ 
+ <div id="middle">
 <table border="0">
- <form action="insert_task.php" method="post">
+ <form action="insert_task.php" method="post" id="form">
  <tr><td>Project Name:</td><td>
- <input type="text" id="projectName" />
+ <input type="text" name="projectName" id="projectName" />
  </td></tr>
  <tr><td>Start Date/Time:</td><td>
-<input type="text" id="dateStart" />
+<input type="text" name="dateStart" id="dateStart" />
  </td></tr>
  <tr><td>End Date/Time:</td><td>
- <input type="text" id="dateEnd" />
+ <input type="text" name="dateEnd" id="dateEnd" />
  </td></tr>
  <tr><td>Assign to:</td><td>
- <input type="text" id="assignTo" />
+ <input type="text" name="assignTo" id="assignTo" />
  </td></tr>
  <tr><td>Comments:</td>
- <td><textarea cols="30" rows="5" name="myname">
+ <td><textarea cols="30" rows="5" name="comments" id="comments">
 </textarea></tr><td>
   <tr><td>
- <input type="button" id="submit" value="Submit Task" />
+ <input type="submit" id="submit" value="Submit Task" />
  </td>
  <td>
  <input type="button" id="reset" value="Reset" />
