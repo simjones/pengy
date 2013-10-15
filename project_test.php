@@ -19,7 +19,7 @@
 <pre>
 	<?php
 include 'get_active_projects.php';
-$projectPosts = GetActiveProjects();
+$projectPosts = GetActiveProjects(active);
 
 foreach ($projectPosts as $post)
 {

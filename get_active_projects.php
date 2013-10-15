@@ -1,5 +1,6 @@
 <?php
 include 'database_func.php';
+include 'project_post.php';
 /*
 $connection = mysql_connect('localhost', 'drmazak_die', 'diedie') or die ("<p class='error'>Sorry, we were unable to connect to the database server.</p>");
 $database = "drmazak_blog";

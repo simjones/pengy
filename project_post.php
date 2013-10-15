@@ -12,7 +12,7 @@ public $assignTo;
 public $comments;
 public $status;
 
-function __construct($inId=null, $inProjectName=null, $inOrganizer $inDateStart=null, $inDateEnd=null, $inAssignTo=null, $inComments=null, $inStatus=null)
+function __construct($inId=null, $inProjectName=null, $inOrganizer=null, $inDateStart=null, $inDateEnd=null, $inAssignTo=null, $inComments=null, $inStatus=null)
 {
 	if (!empty($inId))
 	{
@@ -25,7 +25,7 @@ function __construct($inId=null, $inProjectName=null, $inOrganizer $inDateStart=
 	
 	if (!empty($inOrganizer))
 	{
-		this->organizer = $inOrganizer
+		$this->organizer = $inOrganizer;
 	}
 	
 	if (!empty($inDateStart))
@@ -42,16 +42,16 @@ function __construct($inId=null, $inProjectName=null, $inOrganizer $inDateStart=
 
 	if (!empty($inAssignTo))
 	{
-		this->organizer = $inOrganizer
+		$this->organizer = $inOrganizer;
 	}
 	
 	if (!empty($inComments))
 	{
-		this->comments = $inComments
+		$this->comments = $inComments;
 	}
 	if (!empty($inStatus))
 	{
-		this->status = $inStatus
+		$this->status = $inStatus;
 	}
 
 }
