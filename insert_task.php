@@ -14,13 +14,13 @@ echo($_POST[text]);
 echo("<br/>");
 echo($_POST[id]);
 */
-$_POST[id] = "null";
+$_POST['id'] = "null";
 
-$sql = "INSERT INTO projects (projectName, dateStart, dateEnd, assignTo, comments) VALUES ('" . $_POST[projectName] . "', '" . $_POST[dateStart] . "', '" . $_POST[dateEnd] . "', '" . $_POST[assignTo] . "', '" . $_POST[comments] . "');";
+$sql = "INSERT INTO projects (projectName, dateStart, dateEnd, assignTo, comments) VALUES ('" . $_POST['projectName'] . "', '" . $_POST['dateStart'] . "', '" . $_POST['dateEnd'] . "', '" . $_POST['assignTo'] . "', '" . $_POST['comments'] . "');";
 
 
 echo($sql);
-if(isset($_POST[lastName]))
+if(isset($_POST['lastName']))
 {
 
 mysql_query($sql) or die(mysql_error());;

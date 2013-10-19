@@ -66,8 +66,16 @@ header("Location: login.php");
 </head>
 <body>
  <div id="header">
+    <img src="images/TTDefaultHeader.jpg">
  </div>
- 
+<nav id="nav">
+<ul>
+   <li class='active'><a href='index.html'><span>Home</span></a></li>
+   <li><a href='#'><span>Products</span></a></li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</nav>
  <div id="middle">
 <table border="0">
  <form action="insert_task.php" method="post" id="form">

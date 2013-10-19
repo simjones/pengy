@@ -42,6 +42,9 @@ $add_member = mysql_query($insert);
 <body>
  <h1>Registered</h1>
  <p>Thank you, you have registered - you may now login</a>.</p>
+<script>
+setTimeout(function(){location.href='login.php'},2000);
+</script>
  <?php } 
  else {	 ?>
  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
