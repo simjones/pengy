@@ -1,11 +1,13 @@
 <?php 
 include 'database_func.php';
-
+session_start();
  //checks cookies to make sure they are logged in 
 if(isset($_COOKIE['ID_my_site'])) { 
 $username = $_COOKIE['ID_my_site']; 
 $pass = $_COOKIE['Key_my_site']; 
-$check = mysql_query("SELECT * FROM users WHERE username = '$username'")or die(mysql_error()); 
+$check = mysql_query("SELECT * FROM users WHERE username = '$username'")or die(mysql_error());
+//$name = mysql_query("SELECT firstname, lastname FROM users WHERE username = '$username'")or die(mysql_error()); 
+$_SESSION['id'] = mysql_query("SELECT id FROM users WHERE username = '$username'")or die(mysql_error());
 while($info = mysql_fetch_array( $check )) 	 
 { 
  //if the cookie has the wrong password, they are taken to the login page 
@@ -68,6 +70,7 @@ header("Location: login.php");
  <div id="header">
     <img src="images/TTDefaultHeader.jpg">
  </div>
+    <p>Welcome <?php echo($username); ?></p>
 <nav id="nav">
 <ul>
    <li class='active'><a href='index.html'><span>Home</span></a></li>
@@ -100,6 +103,7 @@ header("Location: login.php");
  <td>
  <input type="button" id="reset" value="Reset" />
  </tr>
+
  </table>
  
  </form>

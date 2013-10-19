@@ -6,7 +6,7 @@ include 'database_func.php';
  if (isset($_POST['submit'])) { 
  
  //This makes sure they did not leave any fields blank
- if (!$_POST['username'] | !$_POST['pass'] | !$_POST['pass2'] ) {
+ if (!$_POST['firstname'] | !$_POST['lastname'] | !$_POST['username'] | !$_POST['pass'] | !$_POST['pass2'] ) {
  	die('You did not complete all of the required fields');
  }
  // checks if the username is in use
@@ -32,7 +32,7 @@ if (!get_magic_quotes_gpc()) {
  	$_POST['username'] = addslashes($_POST['username']);
  }
  // now we insert it into the database
-$insert = "INSERT INTO users (username, password) VALUES ('".$_POST['username']."', '".$_POST['pass']."')";
+ $insert = "INSERT INTO users (firstname, lastname, username, password) VALUES ('".$_POST['firstname']."', '".$_POST['username']."', '".$_POST['username']."', '".$_POST['pass']."')";
 $add_member = mysql_query($insert);
 ?>
 <html>
@@ -55,6 +55,12 @@ setTimeout(function(){location.href='login.php'},2000);
  </div>
  </div>
  <table border="0">
+ <tr><td>First Name:</td><td>
+ <input type="text" name="firstname" maxlength="60">
+ </td></tr>
+ <tr><td>Last Name:</td><td>
+ <input type="text" name="lastname" maxlength="60">
+ </td></tr>
  <tr><td>Username:</td><td>
  <input type="text" name="username" maxlength="60">
  </td></tr>

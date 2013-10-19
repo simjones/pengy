@@ -1,6 +1,7 @@
 <?php
 
 include 'database_func.php';
+session_start();
 // ini_set('display_errors', 1); 
 // error_reporting(-1);
 /*
@@ -16,7 +17,7 @@ echo($_POST[id]);
 */
 $_POST['id'] = "null";
 
-$sql = "INSERT INTO projects (projectName, dateStart, dateEnd, assignTo, comments) VALUES ('" . $_POST['projectName'] . "', '" . $_POST['dateStart'] . "', '" . $_POST['dateEnd'] . "', '" . $_POST['assignTo'] . "', '" . $_POST['comments'] . "');";
+$sql = "INSERT INTO projects (projectName, organizer, dateStart, dateEnd, assignTo, comments) VALUES ('".$_POST['projectName'] . "', '" . $_SESSION['id'] . "', '" . $_POST['dateStart'] . "', '" . $_POST['dateEnd'] . "', '" . $_POST['assignTo'] . "', '" . $_POST['comments'] . "');";
 
 
 echo($sql);
