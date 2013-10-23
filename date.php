@@ -2,7 +2,7 @@
 
 class Date 
 {
-	public static function isPossible($date1, $date2=null){
+	public static function isPossible($date1, $date2){
 	// date 1 should be start. date 2 should be end
 	// convert dates to julian
 	// return true if possible
@@ -22,15 +22,15 @@ class Date
 	$dateTwoJulian = gregoriantojd($dateTwoExploded[1], $dateTwoExploded[2], $dateTwoExploded[0]); 	
 	
 	if (dateTwoJulian > dateOneJulian) {
-	return true;
+            return true;
 	}
 	else {
-	return false;
+            return false;
 	}
-	}
+} // end function
 	
 	public static function numDaysBetween($date1, $date2){
-	// calculate the number of days between two dates. use julian dates?
+	// calculate the number of days between two dates
 	$date1 = strtotime($date1);
 	$date2 = strtotime($date2);
 	
@@ -38,14 +38,18 @@ class Date
 	
 	return $datediff;
 	
-	}
+} // end function
 	
 	public static function numDaysFromNow($date1) {
 	// calculate the number of days from today to a date in the future.
-	// if date is from past, return negative number
-	}
+	$now = time();
+        $date1 = strtotime($date1);
+        $datediff = $date1 - $now;
+        return $datediff;
+            
+} // end function
 	
-}
+} // end class
 	/*
 	calling a static function: Date::isPossible(arg);
 	int gregoriantojd ( int $month , int $day , int $year )
