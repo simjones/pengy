@@ -1,11 +1,57 @@
+/*gradient background*/
 body {
+	background: url(images/TTBackground.jpg) no-repeat center center fixed; 
+ 	 -webkit-background-size: cover;
+ 	 -moz-background-size: cover;
+ 	 -o-background-size: cover;
+ 	 background-size: cover;
+ 	 
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	font-family: verdana, arial, helvetica, sans-serif;
-	color: #ccc;
-	background-color: #333;
+	color: #000000;
+	background-color: #FFFFFF;
 	}
-nav ul li {
+
+/* navigation */
+#nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: auto;
+  position: relative;
+  display: block;
+  height: 36px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent url('images/OFF.gif') repeat-x top left;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  border-bottom: 4px solid #555555;
+  border-top: 1px solid #919191;
+}
+#nav li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#nav li a {
+  display: block;
+  float: left;
+  color: #8c3a3a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 20px 0 20px;
+  height: 24px;
+  background: transparent url('images/DIVIDER.gif') no-repeat top right;
+}
+#nav li a:hover {
+  background: transparent url('images/HOVER.gif') no-repeat top right;
+  color: #8c3a3a;
+}
+
+/*nav ul li {
 	list-style: none;
 	list-style-type: none;
 	float: left;
@@ -13,15 +59,20 @@ nav ul li {
 	top: 0px;
 	right: 10x;
 	text-align: left;
-	}
-	
-#header img {
-float: center;
-width: 55%;
-height: 20%;
+	}*/
+
+/* logo header */
+
+#header {
+/*float: center;
+width: 30%;
+height: 60%;
 display: block;
 margin-left: auto;
-margin-right: auto;
+margin-right: auto;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
 
 table {
@@ -118,25 +169,26 @@ h6 {
 	margin-bottom: 5px; 
 	}	
 #top {
-	margin: 20px 20px 0px 20px;
-	padding: 10px;
-	border: 5px solid #ccc;
-	background: #666;
+	/*margin: 20px 20px 50px 20px;*/
+	/*padding: 10px; */
+	border: 0px solid #000; 
+	background: inherit;
 	height: 100px; /* ie5win fudge begins */
 	voice-family: "\"}\"";
 	voice-family:inherit;
 	height: 70px;
 	}
 html>body #top {
-	height: 70px; /* ie5win fudge ends */
+	height: 0px; /* ie5win fudge ends */
 	}
+
 #left {
 	position: absolute;
 	top: 120px;
 	left: 0px;
 	margin: 20px;
 	padding: 10px;
-	border: 5px solid #ccc;
+	/* border: 5px solid #ccc; */
 	background: #666;
 	width: 150px; /* ie5win fudge begins */
 	voice-family: "\"}\"";
@@ -147,10 +199,10 @@ html>body #left {
 	width: 120px; /* ie5win fudge ends */
 	}
 #middle {
-	margin: 20px 190px 20px 190px;
-	padding: 10px;
+	margin: 240px 190px 20px 190px;
+	padding: 10px 10px 100px 10px;
 	/* border: 5px solid #ccc; */
-	background: #666;
+	background: inherit;
 	word-wrap: normal;
 	}
 #right {
@@ -160,7 +212,7 @@ html>body #left {
 	margin: 20px;
 	padding: 10px;
 	/* border: 5px solid #ccc; */
-	background: #666;
+	background: #inherit;
 	width: 150px; /* ie5win fudge begins */
 	voice-family: "\"}\"";
 	voice-family:inherit;
@@ -181,7 +233,7 @@ pre {
 .title {
 	letter-spacing: 5px;
 	font-size: 60px;
-	color: #ccc;
+	/* color: #ccc; */
 	font-weight: bolder;
 	text-align: left;
 	text-shadow: 0px 0px 7px;
@@ -222,3 +274,124 @@ secondary-b-2 { background-color: #722317 }
 secondary-b-3 { background-color: #670E00 }
 secondary-b-4 { background-color: #BC3A26 }
 secondary-b-5 { background-color: #BC5444 } */
+
+.ViewProjects {
+	margin:0px;padding:0px;
+	width:100%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.ViewProjects table{
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}
+
+.ViewProjects tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.ViewProjects table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.ViewProjects table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}
+.ViewProjects tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}
+.ViewProjects tr:hover td{
+	
+}
+.ViewProjects tr:nth-child(odd){ background-color:#aad4ff; }
+.ViewProjects tr:nth-child(even){ background-color:#ffffff; }
+.ViewProjects td{
+	vertical-align:middle;
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:11px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}
+.ViewProjects tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}
+.ViewProjects tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}
+.ViewProjects tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.ViewProjects tr:first-child td{
+		background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+	background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
+
+	background-color:#005fbf;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.ViewProjects tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+	background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
+	background-color:#005fbf;
+}
+.ViewProjects tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.ViewProjects tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+
+/* this may be useful later
+this is to fill a row */
+.view-table
+{
+    display:table;
+    width:100%;
+}
+.view-row,
+{
+    display:table;
+}
+.view-row > div
+{
+    display: table-cell;
+}
+.view-name 
+{
+    text-align:right;
+}
