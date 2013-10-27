@@ -67,7 +67,7 @@ header("Location: login.php");
 function clock() {
    var now = new Date();
    var outStr = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
-   var outStrDay = " " + now.getMonth() + '/' + now.getDate() + '/' + now.getFullYear();
+   var outStrDay = " " + (now.getMonth() + 1) + '/' + now.getDate() + '/' + now.getFullYear();
    var timestamp = outStr + outStrDay;
    document.getElementById("clock").innerHTML=timestamp;
    setTimeout('clock()',1000);
