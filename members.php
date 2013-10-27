@@ -81,17 +81,19 @@ header("Location: login.php");
 </ul>
 </nav>
     <div id="left"><p>Welcome <?php echo($username); ?></p>
+        <pre>
         <p><table border="0" class="ViewProjects">
-<pre>
+            <tr><td>Project Name<td>Organizer</td><td>Started on:</td><td>Status</td><td>Comments</td></tr>
+
 	<?php
 include 'get_active_projects.php';
 $projectPosts = GetActiveProjects('active');
 
 foreach ($projectPosts as $post)
 {
-	echo "&nbsp;";
-	echo "<tr><th><br>" . $post->projectName . "<br></th></tr>";
-	echo "<tr><td>Organizer: " . $post->organizer . "</td><td> . Started On: " . $post->dateStarted . " </td><td>Status: " . $post->status . "</td></tr>";
+	echo "<tr>";
+	echo "<td><br>" . $post->projectName . "<br></td>";
+	echo "<td>" . $post->organizer . "</td><td>" . $post->dateStarted . " </td><td>" . $post->status . "</td>";
 	echo "<td>" . $post->comments . "</td></tr>";
 
 }
