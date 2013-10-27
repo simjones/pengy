@@ -15,7 +15,7 @@ body {
 
 /* navigation */
 #nav ul {
-  margin: 0;
+  margin-top: 155px;
   padding: 0;
   list-style-type: none;
   width: auto;
@@ -178,48 +178,41 @@ h6 {
 	voice-family:inherit;
 	height: 70px;
 	}
-html>body #top {
-	height: 0px; /* ie5win fudge ends */
-	}
-
 #left {
-	position: absolute;
-	top: 120px;
-	left: 0px;
-	margin: 20px;
+        float: left;
+	position: relative;
 	padding: 10px;
 	/* border: 5px solid #ccc; */
-	background: #666;
+	background: transparent;
 	width: 150px; /* ie5win fudge begins */
 	voice-family: "\"}\"";
 	voice-family:inherit;
-	width: 120px;
+	width: 15%;
 	}
-html>body #left {
-	width: 120px; /* ie5win fudge ends */
-	}
+
 #middle {
-	margin: 240px 190px 20px 190px;
-	padding: 10px 10px 100px 10px;
+        float: left;
+        position: relative;
+	margin: 100px 190px 20px 190px;
+	padding: 10px 10px 10px 10px;
 	/* border: 5px solid #ccc; */
-	background: inherit;
+	background: transparent;
 	word-wrap: normal;
+        width: 70%:
 	}
 #right {
-	position: absolute;
+        float: left;
+	position: relative;
 	top: 120px;
 	right: 0px; /* Opera5.02 will show a space at right when there is no scroll bar */
 	margin: 20px;
 	padding: 10px;
 	/* border: 5px solid #ccc; */
-	background: #inherit;
+	background: transparent;
 	width: 150px; /* ie5win fudge begins */
 	voice-family: "\"}\"";
 	voice-family:inherit;
-	width: 120px;
-	}
-html>body #right {
-	width: 120px; /* ie5win fudge ends */
+	width: 15%;
 	}
 pre {
 	font-size: 12px;
