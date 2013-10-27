@@ -64,6 +64,14 @@ header("Location: login.php");
     timeFormat: "hh:mm:ss"
     });
   });
+function clock() {
+   var now = new Date();
+   var outStr = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+   var outStrDay = " " + now.getMonth() + '/' + now.getDate() + '/' + now.getFullYear();
+   var timestamp = outStr + outStrDay;
+   document.getElementById("clock").innerHTML=timestamp;
+   setTimeout('clock()',1000);
+}
 
   </script>
 </head>
@@ -74,13 +82,14 @@ header("Location: login.php");
     
 <nav id="nav">
 <ul>
-   <li class='active'><a href='index.html'><span>Home</span></a></li>
-   <li><a href='#'><span>Products</span></a></li>
-   <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='#'><span>Contact</span></a></li>
+   <li class='active'><a href='members.php'><span>Home</span></a></li>
+   <li><a href='#'><span>Add New Tasks</span></a></li>
+   <li><a href='#'><span>View Tasks</span></a></li>
+   <li><a href='#'><span>Reports</span></a></li>
+   <li class='last'><div id="clock"><script>clock(); </script></div></li>
 </ul>
 </nav>
-    <div id="left"><p>Welcome <?php echo($username); ?></p>
+    <div id="left"><p>Welcome <?php echo($username); ?><br/></p>
         <pre>
         <p><table border="0" class="ViewProjects">
             <tr><td>Project Name<td>Organizer</td><td>Started on:</td><td>Status</td><td>Comments</td></tr>
