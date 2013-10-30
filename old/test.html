@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <script src="jquery-1.10.2.js"></script> 
+    <script src="jquery.form.js"></script> 
+ 
+    <script> 
+    	$(document).ajaxStart(function() {
+	$("#loading").show();
+	});
+	$(document).ajaxComplete(function() {
+	$("#loading").hide();
+	});
+	/*
+        $(document).ready(function() { 
+        	var options = {
+		// beforeSubmit:  showRequest,
+		// success:       showResponse,
+		error:		showError,		
+	}
+        }); 
+        */
+        $(document).ready(function(){
+   	var $form = $('#myForm');
+   	$form.submit(function(){
+      	$.post($(this).attr('action'), $(this).serialize(), function(response){
+            		// do something here on success
+      		},'json');
+      	return false;
+   	});
+	});
+	
+        /*
+        $.post('comment.php', {
+            firstName: $('#firstName').val(),
+            lastName: $('#email').val(),
+            text: $('#text').val(),
+            id: $(null)
+        }
+        */
+	function showError(XMLHttpRequest, textStatus, errorThrown) { 
+      	alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+	}
+
+    </script> 
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+<div id="main">
+<form id="myForm" action="comment.php" method="post"> 
+    First Name: <input type="text" name="firstName" id="firstName" /> 
+    <br>
+    Last Name: <input type="text" name="lastName" id="lastName" />
+    <br>
+    Comment: <textarea name="text" name="text" id="text"></textarea> 
+    <input type="submit" value="Submit Comment" /> 
+</form>
+</div>
+<img id="loading" src="loading.gif" style="display:none;" />
+</body>
+</html>

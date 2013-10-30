@@ -58,11 +58,10 @@ $check = mysql_query("SELECT * FROM users WHERE username = '$username'")
 ?> 
 <body>
 <link rel="stylesheet" media="all" type="text/css" href="main.css" />
- 
+ <div id="middle">
  <div id="header">
-     <!--
- <img src="ttlogo.jpg"/>-->
+ <img src="ttlogo.jpg"/>
  </div>
 
- <div id="middle">
+ 
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post"> <table border="0"> <tr><td colspan=2><h1>Login</h1></td></tr> <tr><td>Username:</td><td> <input type="text" name="username" maxlength="40"> </td></tr> <tr><td>Password:</td><td> <input type="password" name="pass" maxlength="50"> </td></tr> <tr><td colspan="2" align="right"> <input type="submit" name="submit" value="Login"> </td></tr> </table> </form> <?php } ?>  </div>

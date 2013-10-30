@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <script src="jquery-1.10.2.js"></script> 
+    <script src="jquery.form.js"></script> 
+ 
+    <script> 
+    	$(document).ajaxStart(function() {
+	$("#loading").show();
+	});
+	$(document).ajaxComplete(function() {
+	$("#loading").hide();
+	});
+	
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+        	var options = {
+		// beforeSubmit:  showRequest,
+		// success:       showResponse,
+		error:		showError,		
+	}
+        }); 
+        // Send the request
+        $.post('comment.php', {
+            firstName: $('#firstName').val(),
+            lastName: $('#email').val(),
+            text: $('#text').val(),
+            id: $(null)
+        }
+	function showError(XMLHttpRequest, textStatus, errorThrown) { 
+      	alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+	}
+    </script> 
+</head>
+<body>
+<form id="myForm" action="comment.php" method="post"> 
+    First Name: <input type="text" name="firstName" id="firstName" /> 
+    Last Name: <input type="text" name="lastName" id="lastName" />
+    Comment: <textarea name="text" name="text" id="text"></textarea> 
+    <input type="submit" value="Submit Comment" /> 
+</form>
+<img id="loading" src="loading.gif" style="display:none;" />
+</body>
+</html>

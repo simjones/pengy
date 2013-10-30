@@ -16,20 +16,17 @@
 <p>1</p>
 </div>
 <div id="middle">
-        <pre>
-        <p><table border="0" class="ViewProjects">
-            <tr><td>Project Name<td>Organizer</td><td>Started on:</td><td>Status</td><td>Comments</td></tr>
-
+<pre>
 	<?php
 include 'get_active_projects.php';
-$projectPosts = GetActiveProjects('active');
+$projectPosts = GetActiveProjects(active);
 
 foreach ($projectPosts as $post)
 {
-	echo "<tr>";
-	echo "<td><br>" . $post->projectName . "<br></td>";
-	echo "<td>" . $post->organizer . "</td><td>" . $post->dateStarted . " </td><td>" . $post->status . "</td>";
-	echo "<td>" . $post->comments . "</td></tr>";
+	echo "&nbsp;";
+	echo "<br>" . $post->projectName . "<br>";
+	echo "<p>" . $post->comments . "</p>";
+	  echo "<span>Organizer: " . $post->organizer . " Started On: " . $post->dateStarted . " Status: " . $post->status . "</span><br><br>";
 
 }
 

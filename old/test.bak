@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+ 
+    <script> 
+    	$(document).ajaxStart(function() {
+	$("#loading").show();
+	});
+	$(document).ajaxComplete(function() {
+	$("#loading").hide();
+	});
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+        	var options = {
+		beforeSubmit:  showRequest,
+		// success:       showResponse,
+		error:		showError,		
+	};
+            // bind 'myForm' and provide a simple callback function 
+            $('#myForm').ajaxForm(function() { 
+                alert("Thank you for your comment!"); 
+            }); 
+        }); 
+        /*
+        $('#myForm').submit(function(e){
+        e.preventDefault();
+	}
+	*/
+        // Send the request
+        $.post('comment.php', {
+            firstName: $('#firstName').val(),
+            lastName: $('#email').val(),
+            text: $('#text').val()
+            id: $(null)
+        }
+	function showError(XMLHttpRequest, textStatus, errorThrown) { 
+      	alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+	} 
+	/* this function doesn't work. commenting out for now.
+	function showRequest(formData, jqForm, options) {
+	var textFieldValue = $('input[id=firstName]').fieldValue();
+	if (!textFieldValue[0]) {
+		document.getElementById('message').innerHTML = 'Please enter your name.';
+		return false;
+	} 
+	
+	return true;
+	}
+	*/
+    </script> 
+</head>
+<body>
+<form id="myForm" action="comment.php" method="post"> 
+    First Name: <input type="text" name="firstName" id="firstName" /> 
+    Last Name: <input type="text" name="lastName" id="lastName" />
+    Comment: <textarea name="text" name="text" id="text"></textarea> 
+    <input type="submit" value="Submit Comment" /> 
+</form>
+<img id="loading" src="loading.gif" style="display:none;" />
+<p id="message">
+</body>
+</html>
