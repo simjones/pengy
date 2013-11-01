@@ -38,8 +38,7 @@ header("Location: login.php");
   <title>TimeTracker Administrative Console</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" media="all" type="text/css" href="main.css" />
-<!-- https://code.google.com/p/datejs/wiki/APIDocumentation -->
-  <script src="date.js"></script>
+
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="jquery-ui-timepicker-addon.js"></script>
@@ -73,6 +72,7 @@ function clock() {
    document.getElementById("clock").innerHTML=timestamp;
    setTimeout('clock()',1000);
 }
+
   </script>
 </head>
 <body>
@@ -89,19 +89,23 @@ function clock() {
    <li class='last'><div id="clock"><script>clock(); </script></div></li>
 </ul>
 </nav>
-<div id="middle">
-<table border="0" class="ViewProjects">
-<pre>
+    <div id="left"><p>Welcome <?php echo($username); ?><br/></p>
+        <pre>
+        <p><table border="0" class="ActiveProjects">
+            <tr><td>Active Projects</td></tr>
+
 	<?php
 include 'get_active_projects.php';
-$projectPosts = GetActiveProjects(active);
+$projectPosts = GetActiveProjects('active');
 
 foreach ($projectPosts as $post)
 {
-	echo "&nbsp;";
-	echo "<tr><th><br>" . $post->projectName . "<br></th></tr>";
-	echo "<tr><td>Organizer: " . $post->organizer . "</td><td> . Started On: " . $post->dateStarted . " </td><td>Status: " . $post->status . "</td></tr>";
+	echo "<tr>";
+	echo "<td><br>" . $post->projectName . "<br></td>";
+	/*
+	echo "<td>" . $post->organizer . "</td><td>" . $post->dateStarted . " </td><td>" . $post->status . "</td>";
 	echo "<td>" . $post->comments . "</td></tr>";
+	*/
 
 }
 
@@ -109,11 +113,37 @@ foreach ($projectPosts as $post)
 
 </pre>
 
+ </table></div>
+ <div id="middle">
+<table border="0">
+ <form action="insert_task.php" method="post" id="form">
+ <tr><td>Project Name:</td><td>
+ <input type="text" name="projectName" id="projectName" />
+ </td></tr>
+ <tr><td>Start Date/Time:</td><td>
+<input type="text" name="dateStart" id="dateStart" />
+ </td></tr>
+ <tr><td>End Date/Time:</td><td>
+ <input type="text" name="dateEnd" id="dateEnd" />
+ </td></tr>
+ <tr><td>Assign to:</td><td>
+ <input type="text" name="assignTo" id="assignTo" />
+ </td></tr>
+ <tr><td>Comments:</td>
+ <td><textarea cols="30" rows="5" name="comments" id="comments">
+</textarea></tr><td>
+  <tr><td>
+ <input type="submit" id="submit" value="Submit Task" />
+ </td>
+ <td>
+ <input type="button" id="reset" value="Reset" />
+ </tr>
+
  </table>
  
  </form>
 
  </div>
-
+    <div id="right"><p>This is the right div.</div>
 </body>
 </html>

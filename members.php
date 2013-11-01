@@ -42,6 +42,8 @@ header("Location: login.php");
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="jquery-ui-timepicker-addon.js"></script>
+  <script type="text/javascript" src="jquery.timer.js"></script>
+  <script type="text/javascript" src="timer_demo.js"></script>
   <script>/*
  $(document).ready(function(){
    var $form = $('form');
@@ -52,6 +54,10 @@ header("Location: login.php");
       return false;
    });
 });*/
+$(document).ready(function(){
+Example1.Timer.toggle();
+});
+
   $(function() {
     $( "#dateStart" ).datetimepicker({
     dateFormat: "yy-mm-dd",
@@ -80,19 +86,55 @@ function clock() {
     <img src="images/TTDefaultHeader.jpg">
  </div>
     
-<nav id="nav">
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='index.html'><span>Home</span></a></li>
+   <li class='has-sub'><a href='#'><span>Log</span></a>
+      <ul>
+         <li><a href='#'><span>Clock In</span></a></li>
+         <li><a href='#'><span>Clock Out</span></a></li>
+         <li class='last'><a href='#'><span>Log Task</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Tasks</span></a>
+      <ul>
+         <li><a href='#'><span>Current</span></a></li>
+         <li><a href='#'><span>Completed</span></a></li>
+         <li class='last'><a href='#'><span>All</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Graph</span></a>
+   	<ul>
+   	   <li><a href='#'><span>By Hours</span></a></li>
+   	   <li class='last'><a href='#'><span>By Task</span></a></li>
+   	</ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Messages</span></a>
+   	<ul>
+   	   <li><a href='#'><span>Inbox</span></a></li>
+   	   <li class='last'><a href='#'><span>Compose</span></a></li>
+   	</ul>
+   </li>
+   <li><a href='index.html'><span>Account</span></a></li>
+   <li><a href='index.html'><span>Help</span></a></li>
+  <li class='last'><div id="clock"><script>clock(); </script></div></li>
+</ul>
+</div>
+<!-- <nav id="nav">
 <ul>
    <li class='active'><a href='members.php'><span>Home</span></a></li>
-   <li><a href='#'><span>Add New Tasks</span></a></li>
-   <li><a href='#'><span>View Tasks</span></a></li>
-   <li><a href='#'><span>Reports</span></a></li>
+   <li><a href='addnew.php'><span>Add New Tasks</span></a></li>
+   <li><a href='showprojects.php'><span>View Tasks</span></a></li>
+   <li><a href='reports.php'><span>Reports</span></a></li>
    <li class='last'><div id="clock"><script>clock(); </script></div></li>
 </ul>
-</nav>
+</nav> -->
+
+<!--
     <div id="left"><p>Welcome <?php echo($username); ?><br/></p>
         <pre>
-        <p><table border="0" class="ViewProjects">
-            <tr><td>Project Name<td>Organizer</td><td>Started on:</td><td>Status</td><td>Comments</td></tr>
+        <p><table border="0" class="ActiveProjects">
+            <tr><td>Active Projects</td></tr>
 
 	<?php
 include 'get_active_projects.php';
@@ -102,8 +144,10 @@ foreach ($projectPosts as $post)
 {
 	echo "<tr>";
 	echo "<td><br>" . $post->projectName . "<br></td>";
+	/*
 	echo "<td>" . $post->organizer . "</td><td>" . $post->dateStarted . " </td><td>" . $post->status . "</td>";
 	echo "<td>" . $post->comments . "</td></tr>";
+	*/
 
 }
 
@@ -111,33 +155,12 @@ foreach ($projectPosts as $post)
 
 </pre>
 
- </table></div>
- <div id="middle">
-<table border="0">
- <form action="insert_task.php" method="post" id="form">
- <tr><td>Project Name:</td><td>
- <input type="text" name="projectName" id="projectName" />
- </td></tr>
- <tr><td>Start Date/Time:</td><td>
-<input type="text" name="dateStart" id="dateStart" />
- </td></tr>
- <tr><td>End Date/Time:</td><td>
- <input type="text" name="dateEnd" id="dateEnd" />
- </td></tr>
- <tr><td>Assign to:</td><td>
- <input type="text" name="assignTo" id="assignTo" />
- </td></tr>
- <tr><td>Comments:</td>
- <td><textarea cols="30" rows="5" name="comments" id="comments">
-</textarea></tr><td>
-  <tr><td>
- <input type="submit" id="submit" value="Submit Task" />
- </td>
- <td>
- <input type="button" id="reset" value="Reset" />
- </tr>
-
- </table>
+-->
+    <span id="stopwatch">00:00:00</span>
+    <p>
+        <input type='button' value='Play/Pause' onclick='Example1.Timer.toggle();' />
+        <input type='button' value='Stop/Reset' onclick='Example1.resetStopwatch();' />
+    </p>
  
  </form>
 
